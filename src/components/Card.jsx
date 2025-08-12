@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 export default function Card() {
+  const [attack, setAttack] = useState(10);
   return (
     <section className="py-20 container mx-auto px-6">
       <div className="flex flex-col border w-[250px] shadow rounded-md overflow-hidden ">
@@ -35,9 +38,9 @@ export default function Card() {
             <div className="flex justify-between">
               <p className="font-semibold">Puissance :</p>
               <div className="flex gap-1">
-                <button>🔼</button>
-                <p>25 ATK</p>
-                <button>🔽</button>
+                <button onClick={() => setAttack(attack + 5)}>🔼</button>
+                <p>{attack} ATK</p>
+                <button onClick={() => setAttack(attack - 5)}>🔽</button>
               </div>
             </div>
           </div>
