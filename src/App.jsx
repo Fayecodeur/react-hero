@@ -1,37 +1,24 @@
-import Card from "./components/Card.jsx";
-import Footer from "./components/Footer.jsx";
-import Navbar from "./components/Navbar.jsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Layout from "./components/Layout.jsx";
+import HomePage from "./pages/HomePage.jsx";
+import AllCharacters from "./pages/AllCharacters.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 function App() {
-  const allCharacters = [
+  const route = createBrowserRouter([
     {
-      name: "Chevalier",
-      image: "chevalier.jpg",
-      health: 50,
-      magic: 45,
-      power: 100,
+      path: "/",
+      element: <Layout />,
+      children: [
+        { path: "/", element: <HomePage /> },
+        { path: "/personnages", element: <AllCharacters /> },
+        { path: "*", element: <NotFound /> },
+      ],
     },
-    {
-      name: "Sorcier",
-      image: "sorcier.jpg",
-      health: 80,
-      magic: 100,
-      power: 90,
-    },
-  ];
-
+  ]);
   return (
     <>
-      <Navbar />
-      <main className="container mx-auto px-6 py-10">
-        <div className=" flex flex-wrap justify-center gap-4">
-          {allCharacters.map((character, index) => (
-            <Card key={index} character={character} />
-          ))}
-        </div>
-      </main>
-
-      <Footer />
+      <RouterProvider router={route} />
     </>
   );
 }
