@@ -1,3 +1,4 @@
+import Buttons from "./Buttons.jsx";
 import Statistique from "./Statistique.jsx";
 
 export default function Card({ character }) {
@@ -19,7 +20,7 @@ export default function Card({ character }) {
       </div>
 
       {/* content */}
-      <div className="p-3 flex flex-col justify-between flex-grow">
+      <div className="p-3 flex flex-col justify-between flex-grow ">
         {/* nom personnage */}
         <p className="text-center text-xl font-bold mb-3">{character.name}</p>
 
@@ -37,12 +38,8 @@ export default function Card({ character }) {
 
         {/* boutons */}
         <div className="flex justify-between mt-4">
-          <button className="py-2 px-4 bg-blue-500 rounded-full text-white font-bold text-center hover:bg-blue-700">
-            Attaquer
-          </button>
-          <button className="py-2 px-4 bg-orange-500 rounded-full text-white font-bold text-center hover:bg-orange-700">
-            Défendre
-          </button>
+          <Buttons color={"bg-blue-500"}>Attaquer</Buttons>
+          <Buttons color={"bg-orange-500"}>Défendre</Buttons>
         </div>
       </div>
     </div>
