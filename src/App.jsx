@@ -3,6 +3,7 @@ import Layout from "./components/Layout.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import AllCharacters from "./pages/AllCharacters.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import CreateChracter from "./pages/CreateChracter.jsx";
 
 function App() {
   const route = createBrowserRouter([
@@ -12,6 +13,7 @@ function App() {
       children: [
         { path: "/", element: <HomePage /> },
         { path: "/personnages", element: <AllCharacters /> },
+        { path: "/creer-un-personnage", element: <CreateChracter /> },
         { path: "*", element: <NotFound /> },
       ],
     },

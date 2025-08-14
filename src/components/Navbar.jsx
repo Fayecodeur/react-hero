@@ -4,6 +4,7 @@ export default function Navbar() {
   const links = [
     { name: "Acceuil", path: "/" },
     { name: "Combattants", path: "/personnages" },
+    { name: "Ajouter", path: "/creer-un-personnage" },
   ];
   return (
     <nav className="py-4 shadow px-4">
